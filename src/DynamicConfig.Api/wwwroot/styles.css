@@ -1,0 +1,125 @@
+:root {
+    color-scheme: light;
+    font-family: Segoe UI, Arial, sans-serif;
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --border: #d8e0ea;
+    --primary: #1f6feb;
+    --text: #1f2937;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+.toolbar,
+.form-card,
+table {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.toolbar {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    margin: 20px 0;
+}
+
+.toolbar input {
+    flex: 1;
+}
+
+.form-card {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+}
+
+input,
+select,
+button {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.checkbox {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 28px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background: #f8fbff;
+}
+
+.table-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.table-actions button {
+    padding: 6px 10px;
+}
+
+.table-actions .danger {
+    background: #d92d20;
+}

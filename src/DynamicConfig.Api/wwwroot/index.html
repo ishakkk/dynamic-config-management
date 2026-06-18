@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Config Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Dynamic Configuration Admin</h1>
+            <p>Storage üzerindeki konfigürasyon kayıtlarını yönetin.</p>
+        </header>
+
+        <section class="toolbar">
+            <input id="nameFilter" type="text" placeholder="İsme göre filtrele (client-side)">
+            <button id="refreshBtn" type="button">Yenile</button>
+        </section>
+
+        <section class="form-card">
+            <h2 id="formTitle">Yeni Kayıt</h2>
+            <form id="configForm">
+                <input type="hidden" id="entryId">
+                <div class="grid">
+                    <label>
+                        Name
+                        <input id="name" required maxlength="200">
+                    </label>
+                    <label>
+                        Application Name
+                        <input id="applicationName" required maxlength="100">
+                    </label>
+                    <label>
+                        Type
+                        <select id="type" required>
+                            <option value="String">String</option>
+                            <option value="Int">Int</option>
+                            <option value="Double">Double</option>
+                            <option value="Bool">Bool</option>
+                        </select>
+                    </label>
+                    <label>
+                        Value
+                        <input id="value" required maxlength="2000">
+                    </label>
+                    <label class="checkbox">
+                        <input id="isActive" type="checkbox" checked>
+                        Is Active
+                    </label>
+                </div>
+                <div class="actions">
+                    <button type="submit">Kaydet</button>
+                    <button id="resetBtn" type="button">Temizle</button>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Value</th>
+                        <th>IsActive</th>
+                        <th>ApplicationName</th>
+                        <th>UpdatedAt</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="configTableBody"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
